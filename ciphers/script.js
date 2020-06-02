@@ -23,10 +23,8 @@ function encodeHandler(){
         if(encodeKey.value.length>0){
             result = encodeWithKey(result,encodeKey.value)
         }
-        writeOuput(result);
     }
-
-
+    writeOuput(result);
 }
 
 function decodeHandler(){
@@ -39,8 +37,8 @@ function decodeHandler(){
         if(decodeKey.value.length>0){
             result = decodeWithKey(result,decodeKey.value)
         }
-        writeOuput(result);
     }
+    writeOuput(result);
 }
 
 function copyHandler(){

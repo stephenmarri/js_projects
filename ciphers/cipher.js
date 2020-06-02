@@ -78,8 +78,4 @@ function decodeWithKey(str,key){
   return result;
 }
 
-console.log(encodeWithKey("do not go gentle into that good night","stephenmarri"));
-console.log(decodeWithKey(`Yef\`Y[oh^b[YYibLqSUdpnW\\U_t]VaNf^jVKh`,`stephenmarri`))
-
-
 
