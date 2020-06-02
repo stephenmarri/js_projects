@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-gradient: linear
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient( to right, #10ac84, #1dd1a1 ,#10ac84);
+    font-family: 'Bitter', serif;
+    font-size: 10px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container{
+    height: 90%;
+    width: 80%;    
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+
+/* input */
+.input-container{
+    height: 70%;
+    width: 90%;
+}
+
+#header{
+    height: 20%;
+    font-size: 4rem;
+}
+
+#input-box{
+    height: 50%;
+    width: 100%;    
+}
+
+#input-box #user__input{
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 88, 66,0.5);
+    max-width: 100%;
+    max-height: 100%;  
+    padding-top: 0.5rem;  
+    padding-left: 0.5rem;  
+    font-family: inherit;
+    border-radius: 0.5rem;
+}
+#input-box #user__input:focus{
+    outline: 0;
+}
+
+#controls{
+    height: 30%;
+    width: 100%;    
+}
+
+#controls__border{
+    height: 90%;
+    width: 100%;
+    border: 1px solid rgba(34, 47, 62,0.4);
+    border-radius: 0.5rem;
+    justify-content: space-around;
+}
+
+#controls__border .crypt{
+    width: 90%;
+    justify-content: flex-start;
+}
+
+#controls__border .code-button{
+    height: 3rem;
+    width: 10rem;
+    border: 0;
+    font-size: 1.8rem;
+    font-weight: 500;    
+    border-radius: 0.5rem;
+    border: 1px solid #030705;
+    color: #fff;
+    cursor: pointer;
+}
+
+#encode__button{
+    background-color: #82589F;
+}
+#decode__button{
+    background-color: #B33771;
+}
+
+#controls__border .code-button:focus{
+    outline: 0;
+}
+#controls__border .code-button:active{
+    transform: scale(0.98);
+}
+
+#controls__border label{
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 0.3rem;
+}
+
+#controls__border .input-number{
+    width: 5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+}
+
+/* input */
+
+
+
+/* output  */
+.output-container{
+    height: 30%;
+    width: 90%;
+    margin-bottom: 1rem;
+    background-color: #99fae0;
+    
+}
+
+.output-container #output__text{
+    height: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    font-family: 'Exo';
+    font-weight: 700;
+    border: 1px solid rgba(0, 88, 66,0.5);
+}
+/* output  */
+
+/* media */
+
+@media only screen and (max-width: 600px) {
+    .main-container{
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+/* media */

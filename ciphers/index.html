@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Cipher's</title>
+</head>
+<body class="flex-col">
+    <div class="main-container flex-col">
+        <div class="input-container flex-col">
+            <div id="header" class="flex-col"><span >Ceaser's Cipher</span></div>
+            <div id="input-box">                   
+                <textarea name="user__input" id="user__input" cols="30" rows="10" placeholder="Enter the text to be crypted"></textarea>                       
+            </div>
+            <div id="controls" class="flex-col">
+                <div id="controls__border" class="flex-col">
+                    <div class="crypt flex-row" id="encode">
+                        <button id="encode__button" class="code-button">Encode</button>
+                        <label for="encode__number">Shift</label>
+                        <input type="number" name="encode__number" id="encode__number" class="input-number" placeholder="1" value=1>
+                    </div>
+                    <div class="crypt flex-row" id="decode">
+                        <button id="decode__button" class="code-button">Decode</button>
+                        <label for="decode__number">Unshift</label>
+                        <input type="number" name="decode__number" id="decode__number" class="input-number" placeholder="1" value=1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-container flex-col">
+            <p id="output__text">
+                
+            </p>
+        </div>
+    </div>
+
+    <script src="cipher.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
