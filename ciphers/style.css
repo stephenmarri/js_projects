@@ -122,6 +122,12 @@ html, body{
     margin-left: 1rem;
 }
 
+#controls__border input[type="number"]{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 0.3rem;
+}
+
 /* input */
 
 
@@ -135,16 +141,34 @@ html, body{
     
 }
 
-.output-container #output__text{
+.output-container #output__text{    
     height: 100%;
     width: 100%;
     font-size: 1.5rem;
     padding-left: 0.5rem;
     padding-top: 0.5rem;
-    font-family: 'Exo';
+    font-family: 'Martel';
     font-weight: 700;
     border: 1px solid rgba(0, 88, 66,0.5);
 }
+
+#copy-icon {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 89%;
+    left: 83%;
+    cursor: pointer;
+}
+
+#copy-icon i{
+    color: rgba(149, 165, 166,0.7);
+}
+
+#copy-icon i:hover{
+    color: rgba(38, 43, 43, 0.7);
+}
+
 /* output  */
 
 /* media */
@@ -153,6 +177,11 @@ html, body{
     .main-container{
         width: 100%;
         height: 100%;
+    }
+
+    #copy-icon {
+        top: 94%;
+        left: 88%;
     }
   }
 

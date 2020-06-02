@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/all.css">
+    <link rel="stylesheet" href="fonts/fontawesome.css">
     <link rel="stylesheet" href="style.css">
     <title>Cipher's</title>
 </head>
@@ -13,7 +15,7 @@
         <div class="input-container flex-col">
             <div id="header" class="flex-col"><span >Ceaser's Cipher</span></div>
             <div id="input-box">                   
-                <textarea name="user__input" id="user__input" cols="30" rows="10" placeholder="Enter the text to be crypted"></textarea>                       
+                <textarea name="user__input" id="user__input" cols="30" rows="10" placeholder="Enter the text to be crypted" spellcheck="false"></textarea>                       
             </div>
             <div id="controls" class="flex-col">
                 <div id="controls__border" class="flex-col">
@@ -24,7 +26,7 @@
                     </div>
                     <div class="crypt flex-row" id="decode">
                         <button id="decode__button" class="code-button">Decode</button>
-                        <label for="decode__number">Unshift</label>
+                        <label for="decode__number">Shift</label>
                         <input type="number" name="decode__number" id="decode__number" class="input-number" placeholder="1" value=1>
                     </div>
                 </div>
@@ -32,11 +34,10 @@
         </div>
 
         <div class="output-container flex-col">
-            <p id="output__text">
-                
-            </p>
+            <p id="output__text"></p>            
         </div>
     </div>
+    <span id="copy-icon"><i id="copy-button" class="fas fa-copy fa-2x"></i></span>
 
     <script src="cipher.js"></script>
     <script src="script.js"></script>
