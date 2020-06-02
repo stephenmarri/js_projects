@@ -74,9 +74,10 @@ html, body{
 #controls__border{
     height: 90%;
     width: 100%;
-    border: 1px solid rgba(34, 47, 62,0.4);
+    border: 1px solid rgba(34, 47, 62,0.2);
     border-radius: 0.5rem;
     justify-content: space-around;
+    background-color: rgba(20, 161, 133,0.5);
 }
 
 #controls__border .crypt{
@@ -119,13 +120,26 @@ html, body{
 #controls__border .input-number{
     width: 5rem;
     height: 2.5rem;
-    margin-left: 1rem;
+    margin-left: 0.4rem;
 }
 
 #controls__border input[type="number"]{
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid #05110f94;
     padding-left: 0.3rem;
+}
+
+#controls__border .key{
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: 1px solid #05110f94;
+    padding-left: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+#controls__border .key:focus{
+    outline: 0;
 }
 
 /* input */
@@ -182,6 +196,14 @@ html, body{
     #copy-icon {
         top: 94%;
         left: 88%;
+    }
+
+    #controls__border .input-number{
+        width: 3rem;
+    }
+
+    #controls__border .key{
+        width: 8rem;
     }
   }
 

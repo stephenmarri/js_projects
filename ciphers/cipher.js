@@ -42,3 +42,44 @@ function decode(str,rotate){
   return result
 }
 
+function encodeWithKey(str,key){
+  let result="";  
+  if(str.length <1 || key.length<1 ) return str;
+  for(let i=0;i<str.length;i++){
+
+    let charStr=str[i];
+    let charKey=key[i%key.length];
+    let asciiKey = charKey.charCodeAt(0);
+
+    if(asciiKey > 31 && asciiKey < 127)  {
+      asciiKey = asciiKey - 31; 
+      result+=(encode(charStr,asciiKey))
+    }
+  }
+  
+  return result;
+}
+
+function decodeWithKey(str,key){
+  let result="";  
+  if(str.length <1 || key.length<1 ) return str;
+  for(let i=0;i<str.length;i++){
+
+    let charStr=str[i];
+    let charKey=key[i%key.length];
+    let asciiKey = charKey.charCodeAt(0);
+
+    if(asciiKey > 31 && asciiKey < 127)  {
+      asciiKey = asciiKey - 31; 
+      result+=(decode(charStr,asciiKey))
+    }
+  }
+  
+  return result;
+}
+
+console.log(encodeWithKey("do not go gentle into that good night","stephenmarri"));
+console.log(decodeWithKey(`Yef\`Y[oh^b[YYibLqSUdpnW\\U_t]VaNf^jVKh`,`stephenmarri`))
+
+
+
