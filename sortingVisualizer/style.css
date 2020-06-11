@@ -1,0 +1,110 @@
+:root{
+    --bg-color: #0a3d62;
+    --line-clr: #eb3b5a;
+    --line-sorted-clr: #018d3b;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0px solid black;
+}
+
+html,body,.main-container{
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+.fl-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fl-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* main container */
+body .main-container{
+    justify-content: start;
+    font-size: 2rem;
+    color: #fff;
+}
+/* main container */
+
+/*  row 1 */
+#row-1{
+    height: 10%;
+    width: 100%;    
+}
+
+.top-navbar{
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--bg-color);
+}
+
+.project__name{
+    width: 30%;
+    margin-left: 1rem;
+    font-size: 2.5rem;
+}
+
+.controls{
+    width: 70%;
+    justify-content: space-evenly;
+}
+/*  row 1 */
+
+/*  row 2 */
+#row-2{
+    height: 90%;
+    width: 100%;
+}
+
+.side-navbar{
+    width: 15%;
+    height: 100%;
+    background: var(--bg-color);    
+}
+.alg_name{
+    padding: 0.8rem 0;
+}
+/*  row 2 */
+
+/* play area */
+.play-container{
+    width: 85%;
+    height: 100%;
+}
+
+#graph{
+    width: 80%;
+    height: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: flex-end;
+    
+}
+
+#graph .line{
+    background: var(--line-clr);        
+}
+
+#graph .line.sorted{
+    background: var(--line-sorted-clr);
+}
+
+#graph .line:not(:nth-child(1)){
+    margin-left: 1px;
+}
+
+#graph #one-1{
+    height: 40%;
+}
+
+/* play area */
