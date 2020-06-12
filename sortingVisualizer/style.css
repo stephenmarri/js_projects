@@ -79,6 +79,7 @@ body .main-container{
 
 /* play area */
 .play-container{
+    background: #a0fcce;
     width: 85%;
     height: 100%;
 }
@@ -86,7 +87,9 @@ body .main-container{
 #graph{
     width: 80%;
     height: 90%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #40f594;
+    box-shadow: 0 0 1px rgba(0, 170, 79,0.5);
+    z-index: 3;
     align-items: flex-end;
     
 }

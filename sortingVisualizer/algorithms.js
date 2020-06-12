@@ -1,26 +1,65 @@
 //############################ Globals
-let arrLen,unsortedArr
+let arrLen,unsortedArr, sleepTime
 //############################ Globals
 
+sleepTime=500
 arrLen = 100
 unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
-unsortedArr.sort(function(a,b){
-    if(a*(Math.floor(Math.random()*arrLen)) > b*(Math.floor(Math.random()*arrLen))){
-        return 1
-    }else{
-        return -1
+unsortedArr = unsortArr(unsortedArr)
+
+
+async function mergeSort(unsortedArr){
+    let low = 0
+    let high = unsortedArr.length - 1
+    let temp = [...unsortedArr]
+    let m = 1
+    while(m <= high - low){
+        for(let i=low;i<high;i+=(2*m)){
+            let from = i
+            let to = Math.min(high,i+(2*m)-1)
+            let mid = i + m -1 
+            await merge(unsortedArr,from,to,mid,temp)
+        }
+        m*=2;
+    }    
+}
+
+async function merge(A,from,to,mid,temp){
+
+    let a=from
+    let b=mid + 1
+    let k=from
+
+    while(a <= mid && b <= to){
+        if(A[a]<A[b]){
+            temp[k]=A[a]
+            a+=1
+        }else{
+            temp[k]=A[b]
+            b+=1
+        }
+        k+=1
     }
-})
 
+    while(a <= mid && k<=to){
+        temp[k]=A[a]
+        a+=1
+        k+=1
+    }
+    while(b<=to && k<=to){
+        temp[k]=A[b]
+        b+=1
+        k+=1
+    }
 
+    for(let i=0;i<A.length;i++){
+        A[i]=temp[i]
+    }     
+    await sleep(sleepTime)  
+    drawLines(A) 
+}
 
-//console.log(bubbleSort(unsortedArr))
-//console.log(selectionSort(unsortedArr));
-//console.log(insertionSort(unsortedArr));
-//console.log(mergeSort(unsortedArr));
-
-
-function bubbleSort(arr){
+async function bubbleSort(arr){
 
     for(let i=0;i<arr.length;i++){
         for(let j=0;j<arr.length-1;j++){
@@ -30,11 +69,13 @@ function bubbleSort(arr){
                 arr[j]=temp
             }
         }        
+        await sleep(sleepTime)  
+        drawLines(arr)    
     }    
     return arr
 }
 
-function selectionSort(arr){    
+async function selectionSort(arr){    
 
     for(let i=0;i<arr.length;i++){
         smallIndex=i
@@ -43,16 +84,18 @@ function selectionSort(arr){
                 smallIndex=j
             }      
         }
-       if(smallIndex>i){
+        if(smallIndex>i){
         temp = arr[smallIndex]
         arr[smallIndex] = arr[i]
         arr[i] = temp
-       }
+        }
+        await sleep(sleepTime)  
+        drawLines(arr)  
     }    
     return arr
 }
 
-function insertionSort(arr){
+async function insertionSort(arr){
 
     for(let i=1;i<arr.length;i++){
         for(let j=0;j<i;j++){
@@ -63,42 +106,28 @@ function insertionSort(arr){
                 break
             }
         }
+        await sleep(sleepTime)  
+        drawLines(arr)  
     }
     return arr
 
 }
-
-
-function mergeSort(arr){
     
-    function merge(l,r){
-        // console.log(`merge: left:${l} right:${r}`);
-        let res=[]
-        while(l.length >0 && r.length>0){
-            if(l[0]<r[0]){
-                res.push(l[0])
-                l.splice(0,1)
-            }else {
-                res.push(r[0])
-                r.splice(0,1)
-            }
-        }
 
-        return res.concat(l).concat(r);
-    }    
-
-    function divide(arr){
-        // console.log(`divide: ${arr}`);
-        if(arr.length < 2){
-            return arr
-        }
-        const mid = Math.floor(arr.length/2)
-        const left = arr.slice(0,mid)
-        const right = arr.slice(mid)
-        
-        return merge(divide(left),divide(right))       
+function unsortArr(arr){
+    let res=[]
+    let arrL = arr.length;
+    for(let i=0;i<arrL;i++){
+        let randomI = Math.floor(Math.random()*(arrL-i))
+        res.push(arr[randomI]);
+        arr.splice(randomI,1)
     }
-
-    return divide(arr)
+    return res;
 }
 
+
+function sleep(await){
+    return new Promise((resolve,reject)=>{
+        setTimeout(resolve, await)
+    })
+}

@@ -4,14 +4,16 @@ let linesCount = arrLen
 console.log(unsortedArr);
 
 function init(){
-    drawLines();
+    drawLines(unsortedArr);
+    
 }
 
 
-function drawLines(){
+function drawLines(arr){
+    graph.innerHTML="";
     
     for(let i=0;i<linesCount;i++){
-        let height = unsortedArr[i]
+        let height = arr[i]
         height = (100/linesCount)*height
 
         let lineElement = document.createElement('div')
@@ -22,4 +24,12 @@ function drawLines(){
     }
 }
 
+async function main() { 
+    //console.log(bubbleSort(unsortedArr))
+    //console.log(selectionSort(unsortedArr));
+    //console.log(insertionSort(unsortedArr));     
+    await mergeSort(unsortedArr);        
+};
+  
 init()
+main()
