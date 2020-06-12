@@ -1,14 +1,25 @@
 let graph = document.querySelector('#graph')
-
+let alg_Names = document.querySelectorAll('.alg_name')
+let playButton = document.querySelector('#play')
+let runSizeButton = document.querySelector('#sizeLevel')
+let runSpeedButton = document.querySelector('#speedLevel')
+let generateButton = document.querySelector('#newSet')
 let linesCount = arrLen
-console.log(unsortedArr);
+let runAlgName = 'bubble'
+let runSpeed = runSpeedButton.value;
+console.log('runSpeed: ', runSpeed);
+let runSize = runSizeButton.value;
+console.log('runSize: ', runSize);
+
+let running = false
 
 function init(){
-    drawLines(unsortedArr);
-    
+    generateHandler()   
 }
+  
+init()
 
-
+//######################################## draw lines
 function drawLines(arr){
     graph.innerHTML="";
     
@@ -24,12 +35,64 @@ function drawLines(arr){
     }
 }
 
-async function main() { 
-    //console.log(bubbleSort(unsortedArr))
-    //console.log(selectionSort(unsortedArr));
-    //console.log(insertionSort(unsortedArr));     
-    await mergeSort(unsortedArr);        
+//#################################### event handlers
+alg_Names.forEach(element => {
+    element.addEventListener('click',algNameHandler)
+});
+
+playButton.addEventListener('click',playButtonHandler)
+generateButton.addEventListener('click',generateHandler)
+
+
+function generateHandler(e){
+    if(running) return;
+    console.log(this);
+    arrLen = parseInt(runSizeButton.value)    
+    linesCount = arrLen
+    unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
+    unsortedArr = unsortArr(unsortedArr)
+    console.log(unsortedArr,arrLen);
+    drawLines(unsortedArr)
+}
+
+
+function playButtonHandler(e){
+    if(!running){
+        playButton.textContent = '......'
+        run(runAlgName)
+    }
+}
+
+function algNameHandler(e){
+    if(running) return
+    alg_Names.forEach(x => x.classList.remove('selected'))
+    this.classList.add('selected')
+    runAlgName=this.id
+}
+
+async function run(algName) { 
+    running = true
+    document.documentElement.style.setProperty("--transform","scale(1)")
+    sleepTime = 1050- parseInt(runSpeedButton.value)    
+    switch (algName) {
+        case 'bubble':
+            await bubbleSort(unsortedArr);
+            break;
+        case 'selection':
+            await selectionSort(unsortedArr);
+            break;
+        case 'insertion':
+            await insertionSort(unsortedArr);
+            break;
+        case 'merge':
+            await mergeSort(unsortedArr);
+            break;
+    
+        default:
+            await bubbleSort(unsortedArr);
+            break;
+    }
+   playButton.textContent='Play'
+   running=false
+   document.documentElement.style.setProperty("--transform","scale(0.98)")
 };
-  
-init()
-main()

@@ -2,6 +2,7 @@
     --bg-color: #0a3d62;
     --line-clr: #eb3b5a;
     --line-sorted-clr: #018d3b;
+    --transform: scale(0.98)
 }
 *{
     margin: 0;
@@ -14,6 +15,7 @@ html,body,.main-container{
     width: 100%;
     height: 100%;
     font-size: 10px;
+    font-family: 'Balsamiq Sans', cursive;
 }
 
 .fl-row{
@@ -52,12 +54,37 @@ body .main-container{
 .project__name{
     width: 30%;
     margin-left: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-family: 'Sriracha';
+    letter-spacing: 0.2rem;
+    
+
 }
 
 .controls{
     width: 70%;
     justify-content: space-evenly;
+}
+
+#play{
+    border: 1px solid white;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#play:active{
+    transform: var(--transform)
+}
+
+#newSet{
+    border: 1px solid white;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newSet:active{
+    transform: var(--transform)
 }
 /*  row 1 */
 
@@ -70,10 +97,28 @@ body .main-container{
 .side-navbar{
     width: 15%;
     height: 100%;
-    background: var(--bg-color);    
+    background: var(--bg-color); 
+    align-items: stretch;   
 }
 .alg_name{
     padding: 0.8rem 0;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.alg_name:hover{
+    background: #14598a;;
+    cursor: pointer;
+}
+
+.alg_name:active{
+    transform: var(--transform)
+}
+
+.alg_name.selected{
+    color: black;
+    background-color: #a0fcce;
+    font-size: 1.1em;
 }
 /*  row 2 */
 
@@ -106,8 +151,6 @@ body .main-container{
     margin-left: 1px;
 }
 
-#graph #one-1{
-    height: 40%;
-}
+
 
 /* play area */

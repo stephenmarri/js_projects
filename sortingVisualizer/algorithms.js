@@ -2,8 +2,7 @@
 let arrLen,unsortedArr, sleepTime
 //############################ Globals
 
-sleepTime=500
-arrLen = 100
+
 unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
 unsortedArr = unsortArr(unsortedArr)
 
