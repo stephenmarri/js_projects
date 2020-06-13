@@ -2,11 +2,63 @@
 let arrLen,unsortedArr, sleepTime
 //############################ Globals
 
-
+// arrLen=10
+// sleepTime=1000
 unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
 unsortedArr = unsortArr(unsortedArr)
+// heapSort(unsortedArr)
+
+//####################################################### heap sort
+async function heapify(arr,currIdx,len){
+    let largest = currIdx
+    let left = 2*currIdx + 1
+    let right = 2*currIdx + 2
+
+    if( left<len && arr[left]>arr[largest]){
+        largest = left
+    }
+
+    if( right<len && arr[right]>arr[largest]){
+        largest = right
+    }
+
+    if(largest!=currIdx){
+        [arr[currIdx],arr[largest]]=[arr[largest],arr[currIdx]]
+        await heapify(arr,largest,len)
+    }
+     
+}
+
+async function buildMaxHeap(arr){
+    let len = arr.length
+    let startIdx = Math.floor(len/2)-1
+    
+    for(let i=startIdx;i>=0;i--){
+        await heapify(arr,i,len)
+        await sleep(sleepTime)   
+        drawLines(arr)
+    }        
+}
+
+async function heapSort(a){
+    let len = a.length;
+    let startIdx=0
+    let endIdx = len-1
+    await buildMaxHeap(a)
+
+    for(let i=0;i<len;i++){
+        [a[endIdx],a[startIdx]]=[a[startIdx],a[endIdx]];
+        endIdx--;
+        await heapify(a,0,endIdx+1)
+        await sleep(sleepTime)        
+        drawLines(a)
+    }
+    console.log(a);
+}
+//####################################################### heap sort
 
 
+//####################################################### merge sort
 async function mergeSort(unsortedArr){
     let low = 0
     let high = unsortedArr.length - 1
@@ -57,7 +109,10 @@ async function merge(A,from,to,mid,temp){
     await sleep(sleepTime)  
     drawLines(A) 
 }
+//####################################################### merge sort
 
+
+//####################################################### bubble sort
 async function bubbleSort(arr){
 
     for(let i=0;i<arr.length;i++){
@@ -73,6 +128,9 @@ async function bubbleSort(arr){
     }    
     return arr
 }
+//####################################################### bubble sort
+
+//####################################################### selection sort
 
 async function selectionSort(arr){    
 
@@ -93,7 +151,9 @@ async function selectionSort(arr){
     }    
     return arr
 }
+//####################################################### selection sort
 
+//####################################################### insertion sort
 async function insertionSort(arr){
 
     for(let i=1;i<arr.length;i++){
@@ -111,8 +171,9 @@ async function insertionSort(arr){
     return arr
 
 }
-    
+//####################################################### insertion sort    
 
+//####################################################### helpers
 function unsortArr(arr){
     let res=[]
     let arrL = arr.length;
@@ -130,3 +191,4 @@ function sleep(await){
         setTimeout(resolve, await)
     })
 }
+//####################################################### helpers

@@ -7,9 +7,9 @@ let generateButton = document.querySelector('#newSet')
 let linesCount = arrLen
 let runAlgName = 'bubble'
 let runSpeed = runSpeedButton.value;
-console.log('runSpeed: ', runSpeed);
+
 let runSize = runSizeButton.value;
-console.log('runSize: ', runSize);
+
 
 let running = false
 
@@ -45,13 +45,11 @@ generateButton.addEventListener('click',generateHandler)
 
 
 function generateHandler(e){
-    if(running) return;
-    console.log(this);
+    if(running) return;    
     arrLen = parseInt(runSizeButton.value)    
     linesCount = arrLen
     unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
-    unsortedArr = unsortArr(unsortedArr)
-    console.log(unsortedArr,arrLen);
+    unsortedArr = unsortArr(unsortedArr)    
     drawLines(unsortedArr)
 }
 
@@ -67,6 +65,7 @@ function algNameHandler(e){
     if(running) return
     alg_Names.forEach(x => x.classList.remove('selected'))
     this.classList.add('selected')
+    if(unsortedArr[0]==1) generateHandler();
     runAlgName=this.id
 }
 
@@ -86,6 +85,9 @@ async function run(algName) {
             break;
         case 'merge':
             await mergeSort(unsortedArr);
+            break;
+        case 'heap':
+            await heapSort(unsortedArr);
             break;
     
         default:
