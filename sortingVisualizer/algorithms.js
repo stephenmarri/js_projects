@@ -2,12 +2,56 @@
 let arrLen,unsortedArr, sleepTime
 //############################ Globals
 
-// arrLen=10
-// sleepTime=1000
+//  arrLen=100
+//  sleepTime=1000
 unsortedArr = Array(arrLen).fill().map((item,index)=>item=index+1)
 unsortedArr = unsortArr(unsortedArr)
-// heapSort(unsortedArr)
 
+
+
+//####################################################### quick sort
+async function swap(arr,l,r){
+    [arr[l],arr[r]]=[arr[r],arr[l]]
+    await sleep(sleepTime)
+    drawLines(arr)
+}
+
+async function sortSection(arr,left,right){
+    let l=left
+    let r=right
+    let p=arr[Math.floor((left+right)/2)]
+    
+    while(l<=r){
+        while(arr[l]<p){
+            l++
+        }
+        while(arr[r]>p){
+            r--
+        }
+        if(l<=r){
+            await swap(arr,l,r)
+            l++
+            r--
+        }
+    }
+    
+    return l
+}
+
+async function quickSort(arr,left,right){    
+    let index;
+    if(arr.length>1){
+        index = await sortSection(arr,left,right)                
+        if(left<index-1){
+            await quickSort(arr,left,index-1)
+        }
+        if(index<right){
+            await quickSort(arr,index,right)
+        }  
+    }    
+      
+}
+//####################################################### quick sort
 //####################################################### heap sort
 async function heapify(arr,currIdx,len){
     let largest = currIdx

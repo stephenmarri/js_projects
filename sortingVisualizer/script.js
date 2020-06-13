@@ -89,6 +89,9 @@ async function run(algName) {
         case 'heap':
             await heapSort(unsortedArr);
             break;
+        case 'quick':
+            await quickSort(unsortedArr,0,unsortedArr.length-1)
+            break;
     
         default:
             await bubbleSort(unsortedArr);
