@@ -157,3 +157,26 @@ input::-webkit-inner-spin-button {
 ::-webkit-input-placeholder {
     font-family: 'Lato';
   }
+
+  /* media */
+  @media only screen and (max-width: 600px) {
+    .main--container{
+        height: 30%;
+        width: 95%;
+        background-color: #f1c40f;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+        justify-content: stretch;
+    }
+    #reset{
+        display: block;
+        visibility: visible;
+        text-align: right;
+        font-size: 1.5rem;
+        width: 35rem;
+        flex:0;
+        padding: 1.2rem;
+        align-self: center;
+        justify-self: flex-end;
+        text-decoration: underline;
+    }
+  }
