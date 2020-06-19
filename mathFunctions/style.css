@@ -134,6 +134,11 @@ html,body{
 #resutl_i{
     color:white
 }
+#result__additional{
+    display: none;
+    width: 70%;
+    text-align: center;
+}
 
 
 /* Chrome, Safari, Edge, Opera */

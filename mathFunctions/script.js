@@ -2,6 +2,7 @@ var input = document.querySelector("#userInput");
 var check = document.querySelector("#check");
 var option = document.querySelector('#function__name');
 var reset_ele = document.querySelector('#reset__text');
+var result_additional = document.querySelector('#result__additional')
 //input.addEventListener('change',main);
 check.addEventListener('click',main);
 reset_ele.addEventListener('click',reset);
@@ -24,6 +25,7 @@ function printResult(value){
 }
 
 function main(){
+  result_additional.style.display='none'
   let inputValue = input.value;
   if(!inputValue)return;
   if(option.value==="isPalindrome"){
@@ -60,11 +62,20 @@ function isPalindrome(n){
   }
 
   function isPerfectSquare(n){
-    if( (Math.sqrt(n))%1 == 0 ) return true
+    if( (Math.sqrt(n))%1 == 0 ) {
+      result_additional.style.display='block'
+      result_additional.textContent= `Square of: ${parseInt(Math.sqrt(n))}`
+      return true
+    }
     return false
   }
   function isPerfectCube(n){
-    if( (Math.cbrt(n))%1 == 0 ) return true
+    if( (Math.cbrt(n))%1 == 0 ) 
+    {
+      result_additional.style.display='block'
+      result_additional.textContent= `Cube of: ${parseInt(Math.cbrt(n))}`
+      return true
+    }
     return false
   }
 
@@ -91,6 +102,8 @@ function isPalindrome(n){
     Array.from(ele.classList).forEach(element => {
         ele.classList.remove(element)
     });
+    result_additional.style.display='none'
+
   }
 
 
