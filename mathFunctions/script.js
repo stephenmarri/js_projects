@@ -35,6 +35,12 @@ function main(){
   if(option.value==="isFibonacci"){
       printResult(isFibonacci(inputValue))
   }
+  if(option.value==="isPerfectSquare"){
+      printResult(isPerfectSquare(inputValue))
+  }
+  if(option.value==="isPerfectCube"){
+      printResult(isPerfectCube(inputValue))
+  }
 }
 
 function isPalindrome(n){
@@ -51,6 +57,15 @@ function isPalindrome(n){
           if(n%i==0)return false
       }
       return true;
+  }
+
+  function isPerfectSquare(n){
+    if( (Math.sqrt(n))%1 == 0 ) return true
+    return false
+  }
+  function isPerfectCube(n){
+    if( (Math.cbrt(n))%1 == 0 ) return true
+    return false
   }
 
 

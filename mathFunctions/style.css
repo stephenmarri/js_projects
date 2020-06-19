@@ -65,7 +65,8 @@ html,body{
 }
 #controls--container #function__name{
     height: 100%;
-    font-size: 3rem;
+    font-weight: normal;
+    font-size: 2.75rem;
     padding-left: 2rem;
     background-color: #2980b9;
     color: white;
@@ -99,9 +100,7 @@ html,body{
 #controls--container #arrow{
     padding-right: 1rem;
 }
-#controls--container #dropDown{
-    
-}
+
 
 
 #result--container{
