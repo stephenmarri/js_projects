@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/all.css">
+    <link rel="stylesheet" href="fonts/fontawesome.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Math Functions</title>
+</head>
+<body class="flex-col">
+    <div class="main--container flex-col">
+        <div id="input--container">
+            <input type="number" id="userInput" placeholder="Enter a number...">
+        </div>
+
+        <div id="controls--container" class="flex-row">
+            <div id="function" class="flex-row button">
+                <select name="function__name" id="function__name">
+                    <option value="isPrime">Prime</option>
+                    <option value="isPalindrome">Palindrome</option>
+                    <option value="isFibonacci">Fibonacci</option>
+                </select>                
+                
+                
+            </div>
+            <div id="check" class="flex-row button">
+                <span>Check</span>
+            </div>
+        </div>
+
+        <div id="result--container" class="flex-row">
+            <span id="result__text"><i id="resutl_i"></i></span>
+        </div>
+    </div>
+    <div id="reset"><span id="reset__text"  class="button">reset</span></div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
