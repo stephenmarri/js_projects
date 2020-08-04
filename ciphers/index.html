@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,40 +11,50 @@
     <link rel="stylesheet" href="style.css">
     <title>Cipher's</title>
 </head>
+
 <body class="flex-col">
     <div class="main-container flex-col">
         <div class="input-container flex-col">
-            <div id="header" class="flex-col"><span >Ceaser's Cipher</span></div>
-            <div id="input-box">                   
-                <textarea name="user__input" id="user__input" cols="30" rows="10" placeholder="Enter the text to be crypted" spellcheck="false"></textarea>                       
+            <div id="header" class="flex-col"><span>Ceaser's Cipher</span></div>
+            <div id="input-box">
+                <textarea name="user__input" id="user__input"  
+                    placeholder="Enter the text to be crypted" spellcheck="false"></textarea>
+                <span id="paste-icon"><button id="paste-button" class="rel-button">Paste</button></i></span>
+
             </div>
-            <div id="controls" class="flex-col">
-                <div id="controls__border" class="flex-col">
-                    <div class="crypt flex-row" id="encode">
-                        <button id="encode__button" class="code-button">Encode</button>
-                        <label for="encode__number">Shift</label>
-                        <input type="number" name="encode__number" id="encode__number" class="input-number" placeholder="1" value=1>
-                        <label for="encode__key">Key</label>
-                        <input type="text" name="encode__key" id="encode__key" class="key">
-                    </div>
-                    <div class="crypt flex-row" id="decode">
-                        <button id="decode__button" class="code-button">Decode</button>
-                        <label for="decode__number">Shift</label>
-                        <input type="number" name="decode__number" id="decode__number" class="input-number" placeholder="1" value=1>
-                        <label for="decode__key">Key</label>
-                        <input type="text" name="decode__key" id="decode__key" class="key">
-                    </div>
+
+            <div class="output-container flex-col">
+                <p id="output__text"></p>
+                <span id="copy-icon"><button id="copy-button" class="rel-button">Copy</button></i></span>
+            </div>
+        </div>
+
+
+        <div id="controls" class="flex-col">
+            <div id="controls__border" class="flex-col">
+                <div class="crypt flex-row" id="encode">
+                    <button id="encode__button" class="code-button">Encode</button>
+                    <label for="encode__number">Shift</label>
+                    <input type="number" name="encode__number" id="encode__number" class="input-number" placeholder="1"
+                        value=1>
+                    <label for="encode__key">Key</label>
+                    <input type="text" name="encode__key" id="encode__key" class="key">
+                </div>
+                <div class="crypt flex-row" id="decode">
+                    <button id="decode__button" class="code-button">Decode</button>
+                    <label for="decode__number">Shift</label>
+                    <input type="number" name="decode__number" id="decode__number" class="input-number" placeholder="1"
+                        value=1>
+                    <label for="decode__key">Key</label>
+                    <input type="text" name="decode__key" id="decode__key" class="key">
                 </div>
             </div>
         </div>
 
-        <div class="output-container flex-col">
-            <p id="output__text"></p>            
-        </div>
     </div>
-    <span id="copy-icon"><i id="copy-button" class="fas fa-copy fa-2x"></i></span>
 
     <script src="cipher.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

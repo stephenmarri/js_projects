@@ -5,6 +5,7 @@ const decodeUnShift = document.querySelector('#decode__number')
 const encodeButton = document.querySelector('#encode__button')
 const decodeButton = document.querySelector('#decode__button')
 const copyButton = document.querySelector('#copy-button');
+const pasteButton = document.querySelector('#paste-button');
 const encodeKey = document.querySelector('#encode__key');
 const decodeKey = document.querySelector('#decode__key')
 
@@ -12,6 +13,7 @@ const decodeKey = document.querySelector('#decode__key')
 encodeButton.addEventListener('click',encodeHandler);
 decodeButton.addEventListener('click',decodeHandler);
 copyButton.addEventListener('click',copyHandler)
+pasteButton.addEventListener('click',pasteHandler)
 
 function encodeHandler(){
     let result="";
@@ -43,6 +45,12 @@ function decodeHandler(){
 
 function copyHandler(){
     navigator.clipboard.writeText(output.textContent)
+}
+async function pasteHandler(){
+    console.log("entered");
+    const text = await navigator.clipboard.readText();
+    console.log(text)
+    userInput.textContent = text;
 }
 
 function writeOuput(str){

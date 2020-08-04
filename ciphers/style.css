@@ -6,11 +6,17 @@
 :root{
     --bg-gradient: linear
 }
+
+@font-face{
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format("truetype");
+}
+
 html, body{
     height: 100%;
     width: 100%;
     background: linear-gradient( to right, #10ac84, #1dd1a1 ,#10ac84);
-    font-family: 'Bitter', serif;
+    font-family: 'Poppins', serif;
     font-size: 10px;
 }
 
@@ -36,20 +42,28 @@ html, body{
 
 /* input */
 .input-container{
-    height: 70%;
+    height: 60%;
     width: 90%;
 }
 
 #header{
     height: 20%;
     font-size: 4rem;
+    margin-bottom: 2rem;
 }
+
 
 #input-box{
-    height: 50%;
+    height: 60%;
     width: 100%;    
+    position: relative;
 }
 
+#paste-icon{
+    position: absolute;
+    right: 1%;
+    bottom: 4%;
+}
 #input-box #user__input{
     font-size: 1.5rem;
     width: 100%;
@@ -60,7 +74,8 @@ html, body{
     padding-top: 0.5rem;  
     padding-left: 0.5rem;  
     font-family: inherit;
-    border-radius: 0.5rem;
+    border-radius: 0.0rem;
+    resize: none;
 }
 #input-box #user__input:focus{
     outline: 0;
@@ -68,16 +83,16 @@ html, body{
 
 #controls{
     height: 30%;
-    width: 100%;    
+    width: 90%;    
 }
 
 #controls__border{
     height: 90%;
     width: 100%;
-    border: 1px solid rgba(34, 47, 62,0.2);
-    border-radius: 0.5rem;
+    border: 0px solid rgba(34, 47, 62,0.2);
+    border-radius: 0rem;
     justify-content: space-around;
-    background-color: rgba(20, 161, 133,0.5);
+    background-color: #38c9ad;
 }
 
 #controls__border .crypt{
@@ -93,15 +108,14 @@ html, body{
     font-weight: 500;    
     border-radius: 0.5rem;
     border: 1px solid #05110f94;    
-    color: #fff;
     cursor: pointer;
 }
 
 #encode__button{
-    background-color: #82589F;
+    background-color: #fdcb6e;
 }
 #decode__button{
-    background-color: #B33771;
+    background-color: #e17055;
 }
 
 #controls__border .code-button:focus{
@@ -148,11 +162,11 @@ html, body{
 
 /* output  */
 .output-container{
-    height: 30%;
-    width: 90%;
+    height: 50%;
+    width: 100%;
     margin-bottom: 1rem;
     background-color: #99fae0;
-    
+    position: relative;
 }
 
 .output-container #output__text{    
@@ -167,21 +181,31 @@ html, body{
 }
 
 #copy-icon {
-    width: auto;
-    height: auto;
     position: absolute;
-    top: 89%;
-    left: 83%;
     cursor: pointer;
+    bottom: 4%;
+    right: 1%;
 }
 
-#copy-icon i{
-    color: rgba(149, 165, 166,0.7);
+.rel-button{
+    margin: 0;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+    background-color: aquamarine;
+    border: 1px solid darkgreen;
 }
 
-#copy-icon i:hover{
-    color: rgba(38, 43, 43, 0.7);
+#copy-button:active{
+outline: none;
+transform: scale(0.98);
 }
+#copy-button:focus{
+outline: none;
+}
+
+ 
+
+ 
 
 /* output  */
 
@@ -193,10 +217,9 @@ html, body{
         height: 100%;
     }
 
-    #copy-icon {
-        top: 94%;
-        left: 88%;
-    }
+   #controls button{
+       padding: 0.5rem 0.75rem;
+   }
 
     #controls__border .input-number{
         width: 3rem;
@@ -204,6 +227,10 @@ html, body{
 
     #controls__border .key{
         width: 8rem;
+    }
+
+    #controls__border label{
+        margin-left: 0.5rem;
     }
   }
 
