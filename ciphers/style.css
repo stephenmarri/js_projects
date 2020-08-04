@@ -14,8 +14,11 @@
 
 html, body{
     height: 100%;
-    width: 100%;
-    background: linear-gradient( to right, #10ac84, #1dd1a1 ,#10ac84);
+    width: 100%; 
+  
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Poppins', serif;
     font-size: 10px;
 }
