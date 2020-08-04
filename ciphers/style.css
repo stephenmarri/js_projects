@@ -37,7 +37,7 @@ html, body{
 }
 
 .main-container{
-    height: 90%;
+    height: 90vh;
     width: 50%;    
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
