@@ -1,13 +1,13 @@
 const userInput = document.querySelector('#user__input');
 const output = document.querySelector('#output__text');
 const encodeShift = document.querySelector('#encode__number')
-const decodeUnShift = document.querySelector('#decode__number')
+const decodeUnShift = document.querySelector('#encode__number')
 const encodeButton = document.querySelector('#encode__button')
 const decodeButton = document.querySelector('#decode__button')
 const copyButton = document.querySelector('#copy-button');
 const pasteButton = document.querySelector('#paste-button');
 const encodeKey = document.querySelector('#encode__key');
-const decodeKey = document.querySelector('#decode__key')
+const decodeKey = document.querySelector('#encode__key')
 
 
 encodeButton.addEventListener('click',encodeHandler);
