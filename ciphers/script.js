@@ -46,11 +46,9 @@ function decodeHandler(){
 function copyHandler(){
     navigator.clipboard.writeText(output.textContent)
 }
-async function pasteHandler(){
-    console.log("entered");
-    const text = await navigator.clipboard.readText();
-    console.log(text)
-    userInput.textContent = text;
+function pasteHandler(){
+    const text = navigator.clipboard.readText();
+    text.then(x => userInput.value = x)
 }
 
 function writeOuput(str){
