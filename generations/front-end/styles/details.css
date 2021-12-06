@@ -1,0 +1,20 @@
+body {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-container {
+  width: 80%;
+  min-height: 600px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=details.css.map */

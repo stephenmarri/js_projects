@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #main-container {
+        width: 80%;
+        min-height:600px;
+        background-color: whitesmoke;
+        border: 1px solid black;
+    }
+}
